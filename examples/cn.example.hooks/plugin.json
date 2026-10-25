@@ -1,0 +1,16 @@
+{
+  // 插件清单。字段说明见 docs/插件编写说明.md
+  "id": "cn.example.hooks",
+  "name": "示例钩子插件",
+  "version": "1.0.0",
+  "entry": "plugin.py",
+  "author": "Cncp",
+  "description": "在连接前/连接后/断开时打一行日志，用来验证安卓端插件引擎",
+  "homepage": "https://clash.cupzz.cn/docs/plugins",
+  "capabilities": ["hooks"],
+  "hooks": ["connect.before", "connect.after", "disconnect"],
+  // ⚠️ 这里故意写 1.3.18 而不是 2.0.0：插件引擎在 2.0.0 才正式发布，但现在的调试包
+  // 仍标 1.3.18-debug（app/build.gradle 的版本兜底值，见 README 2.1）。
+  // 写 2.0.0 会让这个验收工具在调试包上被判成「不兼容」而根本不启动 —— 那就没法验了。
+  "minHostVersion": "1.3.18"
+}

@@ -1,0 +1,12 @@
+{
+  // 插件清单。字段说明见 docs/插件编写说明.md
+  "id": "cn.example.ping",
+  "name": "示例测速插件",
+  "version": "1.0.0",
+  "entry": "plugin.py",
+  "author": "Cncp",
+  "description": "演示协议的最小插件，返回模拟延迟",
+  "homepage": "https://clash.cupzz.cn/docs/plugins",
+  "capabilities": ["speedtester"],
+  "minHostVersion": "1.3.32"
+}

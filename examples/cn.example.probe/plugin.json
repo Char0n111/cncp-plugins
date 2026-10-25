@@ -1,0 +1,24 @@
+{
+  // 插件清单。字段说明见 docs/插件编写说明.md
+  "id": "cn.example.probe",
+  "name": "环境探测",
+  "version": "1.0.0",
+  "entry": "plugin.py",
+  "author": "Cncp",
+  "description": "报告插件在本机到底能干什么：联网、写文件、碰客户端",
+  "homepage": "https://clash.cupzz.cn/docs/plugins",
+  // 声明 ≠ 拿到：这三项只是让它们出现在「权限声明」里，
+  // 客户端不据此拦任何东西（沙箱已去掉）；用户看到的是"插件自报要什么"。
+  "permissions": ["files", "network", "hook"],
+  "systemPermissions": ["notifications"],
+  "capabilities": ["actions", "hooks"],
+  "actions": [
+    {
+      "id": "probe",
+      "title": "再探一次",
+      "description": "重新探测三项，结果写进运行日志"
+    }
+  ],
+  "hooks": ["connect.after"],
+  "minHostVersion": "1.3.18"
+}

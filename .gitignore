@@ -1,0 +1,10 @@
+# Python 字节码缓存（打进包会让 sha256 每次都变）
+__pycache__/
+*.pyc
+
+# 系统/junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 注意：packages/ 必须提交 —— 客户端只认仓库里的这个目录

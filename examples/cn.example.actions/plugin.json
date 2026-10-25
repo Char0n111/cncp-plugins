@@ -1,0 +1,39 @@
+{
+  // 插件清单。字段说明见 docs/插件编写说明.md
+  "id": "cn.example.actions",
+  "name": "示例功能插件",
+  "version": "1.0.0",
+  "entry": "plugin.py",
+  "author": "Cncp",
+  "description": "演示怎么给客户端加自己的功能按钮",
+  "homepage": "https://clash.cupzz.cn/docs/plugins",
+  "capabilities": ["actions", "hooks", "tasks"],
+  "actions": [
+    {
+      "id": "show-status",
+      "title": "看看当前状态",
+      "description": "读取客户端刚下发的连接状态并显示出来"
+    },
+    {
+      "id": "echo",
+      "title": "回显",
+      "description": "把输入框里的内容原样回出来",
+      "kind": "prompt",
+      "placeholder": "随便输点什么"
+    },
+    {
+      "id": "enabled-marker",
+      "title": "记住这个开关",
+      "description": "演示开关型动作：开关值会作为参数传进来",
+      "kind": "toggle"
+    }
+  ],
+  "hooks": ["connect.after", "disconnect"],
+  "tasks": [
+    {
+      "id": "heartbeat",
+      "everySeconds": 300
+    }
+  ],
+  "minHostVersion": "1.3.18"
+}
